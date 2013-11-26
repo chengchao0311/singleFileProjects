@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
+<script>
+var guys=["Ada","Yeson","Emma","Cady","Nia","Joan","Jeniffer","丘哥","james"];
+var i = 0;
+var tag = 0;
+$( document ).ready(function() {
+	setInterval("refreshUI()",100);
+});
+
+function refreshUI(){
+	if(tag==0){
+		$("#name").html(guys[i]);
+		if(i < guys.length-1){
+			i++;
+		}else{
+			i=0;	
+		}
+	}
+}
+
+function stop(){
+	console.log("stop");
+	if(tag == 0){
+		tag = 1;
+	}else{
+		tag = 0;
+	}
+}
+
+</script>
+</head>
+<body  bgcolor="#d3d3d3">
+	<h1 onclick="stop()" style="text-align:center;padding-top:200px;font-size:100px" id="name" >empty</h1>
+</body>
+</html>
